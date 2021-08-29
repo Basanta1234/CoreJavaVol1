@@ -9,17 +9,17 @@ public class TwoStringArray {
 
     public static void main(String[] args) {
         String allListedValidErrors = "E10,E13,E11,E25,E15";
-        String errorsAppeaedOnScreen= "E10 E25 E11";
+        String errorsAppearedOnScreen= "E10 E25 E11";
         String[] totalListedErrors = allListedValidErrors.split(",");
-        String[] totalActualErrors = allListedValidErrors.split("\\s+");
+        String[] totalActualErrors = errorsAppearedOnScreen.split("\\s+");
         doesValidErrosContainActual(totalListedErrors, totalActualErrors);
 
         }
 
 
-    private static boolean doesValidErrosContainActual(String[] totalPossibleErrors, String[] actualErros) {
-        List<String> validErrors= new ArrayList<>(Arrays.asList(totalPossibleErrors));
-        List<String> actualErrors= new ArrayList<>(Arrays.asList(actualErros));
+    private static boolean doesValidErrosContainActual(String[] totalListedErrors, String[] totalActualErrors) {
+        List<String> validErrors= new ArrayList<>(Arrays.asList(totalListedErrors));
+        List<String> actualErrors= new ArrayList<>(Arrays.asList(totalActualErrors));
         List<String> commoanElements= new ArrayList<>();
         commoanElements.addAll(validErrors);
         commoanElements.retainAll(actualErrors);
